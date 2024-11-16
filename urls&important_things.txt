@@ -1,0 +1,5 @@
+jenkin server: 
+http://104.196.237.86:8080/
+password: Sachin0517
+username: admin-Sachin
+
