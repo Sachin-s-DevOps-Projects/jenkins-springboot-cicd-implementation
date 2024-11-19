@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'abhishekf5/maven-abhishek-docker-agent:v1'
+      image 'sachinayeshmantha/maven-docker-agent:v1'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/Sachin-s-DevOps-Projects/jenkins-springboot-cicd-implementation.git'
+        git branch: 'main', url: 'https://github.com/Sachin-s-DevOps-Projects/jenkins-springboot-cicd-implementation.git'
         // In this case, checkout stage doesn't need, that's why  sh 'echo passed' command has been used. Because anyways Jenkins do  checkout, because JenkinsFile also stored in the same source code repository.
       }
     }
@@ -57,7 +57,7 @@ pipeline {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config user.email "sachinayeshmantha@gmail.com"
-                    git config user.name "Sachin20010517"
+                    git config user.name "Sachin Ayeshmantha"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
