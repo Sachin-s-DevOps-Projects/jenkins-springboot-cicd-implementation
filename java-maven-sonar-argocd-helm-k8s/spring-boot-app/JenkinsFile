@@ -51,7 +51,7 @@ pipeline {
     stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "jenkins-springboot-cicd-implementation"
-            GIT_USER_NAME = "Sachin20010517"
+            GIT_USER_NAME = "Sachin-s-DevOps-Projects"
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
