@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: sachinayeshmantha/jenkins-springboot-app-cicd:1
+        image: sachinayeshmantha/jenkins-springboot-app-cicd:3
         ports:
         - containerPort: 8080
