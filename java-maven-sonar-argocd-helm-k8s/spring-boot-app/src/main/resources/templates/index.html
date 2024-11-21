@@ -2,24 +2,83 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
-    <link data-th-href="@{/css/main.css?{id}(id=${timestamp})}" rel="stylesheet">
-    <title>CI/CD Master Class By Abhishek Veeramalla</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+    <title th:text="${title}">my-simple-springboot-app</title>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Ultimate CI/CD Pipeline using Java</div></a>
+    <div class="container">
+        <a class="navbar-brand" href="#">Ultimate CI/CD Pipeline</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
 
-<main role="main" class="container">
-    <div class="starter-template">
-        <h1 th:text="${title}">Default title.</h1>
-        <p th:text="${msg}">Default text.</p>
+<header class="jumbotron jumbotron-fluid text-white text-center bg-dark mt-5">
+    <div class="container">
+        <h1 class="display-4" th:text="${title}">Default title</h1>
+        <p class="lead" th:text="${msg}">Default description.</p>
+        <img src="https://via.placeholder.com/600x300" alt="Placeholder Image" class="img-fluid mt-3 rounded shadow" th:src="@{/images/ci_cd_pipeline.png}">
     </div>
+</header>
+
+<main class="container mt-4">
+    <section id="about" class="py-5">
+        <h2 class="text-center">About the Application</h2>
+        <p class="text-justify">
+            This application demonstrates a complete CI/CD pipeline implemented with Spring Boot. It includes modern tools and methodologies for seamless deployment and testing.
+        </p>
+    </section>
+
+    <section id="features" class="py-5 bg-light">
+        <h2 class="text-center">Features</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Continuous Integration and Deployment</li>
+            <li class="list-group-item">Thymeleaf Template Engine</li>
+            <li class="list-group-item">Spring Boot Backend</li>
+            <li class="list-group-item">Responsive Bootstrap Design</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="py-5">
+        <h2 class="text-center">Contact Us</h2>
+        <form>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
 </main>
 
-<script data-th-src="@{/js/main.js}"></script>
-</body>
+<footer class="text-center py-4 bg-dark text-white">
+    <p>&copy; 2024 Ultimate CI/CD Pipeline. All Rights Reserved.</p>
+</footer>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
 </html>
